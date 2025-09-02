@@ -1,7 +1,7 @@
 <?php
 
 //Array
-
+/*
 $array = array(1, 2, 3, 4);
 $array = [1, 2, 3, 4];
 $array = [
@@ -32,7 +32,7 @@ var_dump($array[1][1]);
 $array = [1, 2 ,3];
 array_push($array, 4);
 var_dump($array);
-
+*/
 
 // TYPES
 /*
