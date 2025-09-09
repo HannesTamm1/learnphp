@@ -17,5 +17,3 @@ class Box {
 
 $box1 = new Box(10, 10, 10);
 
-var_dump($box1);
-var_dump($box1->volume());
