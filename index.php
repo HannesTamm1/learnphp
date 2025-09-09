@@ -1,31 +1,43 @@
 <?php
 
-class Job
-{
-    public function task(consoleLogger $logger)
-    {
-        for ($i = 0; $i < 10; $i++) {
-            $logger->log("Task $i completed");
-        }
+class Cat {
+    public function __construct() {
+        var_dump('Class was created');
     }
-}
 
-class consoleLogger implements Logger{
-    public function log($message){
-        echo $message . "\n";
+    public function __call($name, $args) {
+        var_dump($name, $args);
     }
-}
 
-interface Logger {
-    public function log($message);
-}
-
-class fileLogger {
-    public function log($message){
-        $file = fopen('log.log', 'a');
-        fwrite($file, $message . "\n");
-        fclose($file);
+    public function __toString(){
+        return 'Mjäu';
     }
+
+    public function __destruct(){
+        var_dump("The class was destored");
+    }
+
+    public function __get($name){
+        var_dump($name);
+        return 'Hell yeah';
+    }
+
+    public function __set($name, $value){
+        var_dump($name, $value);
+        
+    }
+    
 }
 
-$job = new Job();
+function makeCat(){
+    $cat = new Cat();
+}
+
+$kitty = new Cat();
+var_dump($kitty);
+var_dump($kitty->mood);
+$kitty -> color = 'Rainbow';
+$kitty->throwShit('Many', 'smelly', 'why');
+echo $kitty;
+$kitty = 1;
+var_dump("Something");
