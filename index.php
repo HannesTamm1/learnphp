@@ -1,59 +1,39 @@
 <?php
-//loogilised tehted
-$bool = true && false;
-var_dump($bool);
 
-//Array
-/*
-$array = array(1, 2, 3, 4);
-$array = [1, 2, 3, 4];
-$array = [
-    1,
-    "Hello",
-    true,
-    null,
-    [1, 2, 3]
-];
-$array = [
-    'name' => 'Hannes',
-    'age' => 18,
-    'gender' => 'male',
-    'location' => 'Estonia',
-    69 => "idk",
-    1,
-    2,
-    3
-];
-var_dump($array['name']);
-$array = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
-];
-//Add array values
-var_dump($array[1][1]);
-$array = [1, 2 ,3];
-array_push($array, 4);
-var_dump($array);
-*/
+$num = 15;
+if($num > 10) {
+    var_dump('Suurem');
+} elseif($num > 10) {
 
-// TYPES
-/*
-echo "Hello, World!\n";
+} else {
 
+}
 
-$var = "Ära mine metsa \n";
-echo $var;
+$day = date('w', strtotime('09.09.2025'));
+var_dump($day);
 
-
-$num = 2;
-$num *=2;
-$num **=3;
-$num = 13;
-$num %= 5;
-$bar;
-$bar = NULL;
-var_dump($num);
-var_dump($bar);
-*/
-
+switch($day) {
+    case 1:
+        var_dump('Esmaspäev');
+        break;
+    case 2:
+        var_dump('Teisipäev');
+        break;
+    case 3:
+        var_dump('kolmapäev');
+        break;
+    case 4:
+        var_dump('Neljapäev');
+        break;
+    case 5:
+        var_dump('Reede');
+        break;
+    case 6:
+        var_dump('Laupäev');
+        break;
+    case 7:
+        var_dump('Pühapäev');
+        break;
+    default:
+    var_dump('Imelik päev vm');
+}
