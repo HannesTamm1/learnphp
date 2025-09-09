@@ -1,39 +1,44 @@
 <?php
 
-$num = 15;
-if($num > 10) {
-    var_dump('Suurem');
-} elseif($num > 10) {
-
-} else {
-
+for( $i = 10; $i > 0; $i-- ){
+    var_dump( $i );
 }
 
-$day = date('w', strtotime('09.09.2025'));
-var_dump($day);
-
-switch($day) {
-    case 1:
-        var_dump('Esmaspäev');
-        break;
-    case 2:
-        var_dump('Teisipäev');
-        break;
-    case 3:
-        var_dump('kolmapäev');
-        break;
-    case 4:
-        var_dump('Neljapäev');
-        break;
-    case 5:
-        var_dump('Reede');
-        break;
-    case 6:
-        var_dump('Laupäev');
-        break;
-    case 7:
-        var_dump('Pühapäev');
-        break;
-    default:
-    var_dump('Imelik päev vm');
+for( $i = 10; $i < 1_000_000; $i*= 10){
+    var_dump( $i );
 }
+$time = time();
+$i = 0;
+
+
+while(time()< $time+10){
+    var_dump(time());
+    $i++;
+}
+var_dump( $i );
+
+while($i < 10){
+    var_dump('WHILE');
+}
+do {
+    var_dump('DO');
+
+}while($i < 10);
+
+
+
+$array = [1, 2, 3];
+foreach( $array as $k => $v ){ 
+    var_dump( $value );
+}
+
+$a = 1;
+$b = &$a;
+$b = 2;
+var_dump( $a );
+
+foreach($array as $v ){
+    $value *= 2;
+}
+
+var_dump( $value );
