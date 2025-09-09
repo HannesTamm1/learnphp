@@ -1,6 +1,7 @@
 <?php
 
 class Box {
+    use Colorful;
     private $width;
     protected $heigth;
     private $length;
@@ -8,7 +9,7 @@ class Box {
     public static $count = 0;
 
     public static function test(){
-        var_dump(self::class);
+        var_dump(static::class);
 }
     
     public function __construct($w=0, $h=0, $l=0)
@@ -51,13 +52,24 @@ class MetalBox extends Box {
     }
 }
 
+trait Colorful {
+    private $color;
+
+    public function setColor($color){
+        $this-> color = $color; 
+    }
+    public function getColor(){
+       return $this-> color;
+    }
+}
+
 $metalBox = new Box(2,3,4);
 $Box::$count = 1;
 $Box2 = new Box (2,3,4);
 Box::test();
 MetalBox::test();
-//$Box::$count = 2;
 var_dump($metalBox::$count, $Box::$count);
+
 //$metalBox->width = 'Cool value';
 $metalBox->setWidth(12);
 //$metalBox->width = 123;
