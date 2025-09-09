@@ -2,8 +2,8 @@
 
 class Box {
     public $width;
-    public $length;
-    public $height;
+    protected $length;
+    private $height;
 
     public function __construct($width, $length, $height) {
         $this->width = $width;
@@ -15,5 +15,22 @@ class Box {
     }
 }
 
-$box1 = new Box(10, 10, 10);
+class MetalBox extends Box {
+    public $material = 'Metal';
+    public $massPerUnit = 2;
+
+    public function changeWidth(){
+        $this->width = 123 ;
+    }
+    public function mass(){
+        return $this->volume() * $this->massPerUnit;
+    }
+}
+
+$metalBox = new MetalBox(2, 3, 4);
+$metalBox->width = 123;
+var_dump($metalBox->width);
+var_dump($metalBox);
+var_dump($metalBox->volume());
+var_dump($metalBox->mass());
 
