@@ -1,4 +1,7 @@
 <?php
+//loogilised tehted
+$bool = true && false;
+var_dump($bool);
 
 //Array
 /*
