@@ -65,4 +65,9 @@ class PublicController
         ];
         view('us', compact('posts'));
     }
+
+    public function form()
+    {
+        view('form');
+    }
 }
