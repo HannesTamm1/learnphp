@@ -7,6 +7,12 @@ function dump(...$args)
     echo '</pre>';
 }
 
+
+function dd(...$args)
+{
+    dump(...$args);
+    die;
+}
 function view($viewName, $variables = [])
 {
     extract($variables);
