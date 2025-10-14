@@ -15,8 +15,8 @@ require __DIR__ . '/../routes.php';
 
 $router = new App\Router($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
 $match = $router->match();
-if (is_array($match) && isset($match['action'])) {
-    if (is_callable($match['action'])) {
+if($match){
+    if(is_callable($match['action'])){
         call_user_func($match['action']);
     } else if (is_array($match['action'])) {
         $class = $match['action'][0];
@@ -24,6 +24,7 @@ if (is_array($match) && isset($match['action'])) {
         $method = $match['action'][1];
         $controller->$method();
     }
+    
 } else {
     echo '<img src="https://http.cat/404">';
 }
