@@ -48,10 +48,10 @@ class DB
     }
 
     public function insert($table, $fields)
-    {   
+    {
         $fieldNames = array_keys($fields);
         $fieldNamesText = implode(', ', $fieldNames);
-        
+
         $fieldValuesText = implode("', '", $fields);
 
         $sql = "INSERT INTO $table ($fieldNamesText)
@@ -60,9 +60,10 @@ class DB
         $this->conn->exec($sql);
     }
 
-    public function update($table, $fields, $id) {
+    public function update($table, $fields, $id)
+    {
         $updateText = '';
-        foreach($fields as $key=>$value) {
+        foreach ($fields as $key => $value) {
             $updateText .= "$key='$value', ";
         }
         $updateText = substr($updateText, 0, -2);
@@ -73,8 +74,9 @@ class DB
         // execute the query
         $stmt->execute();
     }
-    
-    public function delete($table, $id) {
+
+    public function delete($table, $id)
+    {
         $sql = "DELETE FROM $table WHERE id=$id";
 
         // use exec() because no results are returned
