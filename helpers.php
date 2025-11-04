@@ -22,7 +22,9 @@ function view($viewName, $variables = [])
 function redirect($path)
 {
     header("Location: $path");
+    exit;
 }
+
 
 function auth()
 {
