@@ -52,6 +52,7 @@
                         </svg>
                     </a>
                     <a class="btn btn-sm btn-outline-secondary" href="/register">Sign up</a>
+                    <a class="nav-link" href="/logout">Logout</a>
                 </div>
             </div>
         </header>

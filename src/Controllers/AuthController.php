@@ -28,14 +28,23 @@ class AuthController
     }
 
     public function login() {
-        dump($_POST);
-        $user = User::where('email', $_POST['email'])[0] ?? null;
-        if(!$user || !password_verify($_POST['password'], $user->password)) {
-            return redirect('/login');
-        }
-        $_SESSION['userID'] = $user->id;
-        redirect('/');
+
+    $user = User::where('email', $_POST['email'])[0] ?? null;
+
+    if (!$user) {
+        return redirect('/login');
     }
+
+    // If $user is an array instead of object, switch to $user['password']
+    if (!password_verify($_POST['password'], $user->password)) {
+        return redirect('/login');
+    }
+
+    $_SESSION['userID'] = $user->id;
+
+    redirect('/');
+}
+
 
     public function logout() {
         unset($_SESSION['userID']);

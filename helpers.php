@@ -13,22 +13,17 @@ use App\Models\User;
 //     die;
 // }
 
-function view($viewName, $variables = [])
-{
+function view($viewName, $variables=[]) {
     extract($variables);
     include __DIR__ . "/views/$viewName.php";
 }
 
-function redirect($path)
-{
+function redirect($path) {
     header("Location: $path");
-    exit;
 }
 
-
-function auth()
-{
-    if (isset($_SESSION['userID'])) {
+function auth() {
+    if(isset($_SESSION['userID'])) {
         return User::find($_SESSION['userID']);
     }
     return false;
